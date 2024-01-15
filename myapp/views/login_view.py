@@ -58,3 +58,9 @@ def user_login(request):
                           {
                               "message": "用户未注册，请注册"
                           })
+
+
+def user_logout(request):
+    # 退出清理session
+    request.session.clear()
+    return redirect('/autotest/login/')
